@@ -1,0 +1,20 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+	<title>Novy_proekt</title>
+	<defs>
+		<image  width="61" height="62" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA+AQMAAACiOIEEAAAAAXNSR0IB2cksfwAAAAZQTFRF////AAAAVcLTfgAAAAJ0Uk5TAP9bkSK1AAAAoElEQVR4nM2SsRHCQBADJZsZyKAD6AQ6w+4MOoEOIMMzhkd3ZvSBXQCONrjb90tP/D4C7ViahO0DfRdw7vDcCfgB3ivB+pWjjBFoiNjfBNcTcbwI7gfGErRGlPAOG8Z27LMdA0rD1EjE1EhUIX0yVkix1BXyBJ2xAGW6zfBnsPSrhvkF5yE4H0dncKrO2cnXLtyO+3KD7tQtu/f6Eqa38QXW93FPFdLhcwAAAABJRU5ErkJggg=="/>
+		<image  width="23" height="23" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXAQMAAADa5EbjAAAAAXNSR0IB2cksfwAAAAZQTFRF////AAAAVcLTfgAAAAJ0Uk5TAP9bkSK1AAAAMklEQVR4nGNkYGBgZPzXyMj+4yEj/4ePjPIPfjLaH/gLxvUN/4nCMPUgvSAzQGYBzQQAQYEqhELP4S0AAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.s0 { fill: #da5f5f } 
+		.t1 { font-size: 49px;fill: #000000;font-weight: 400;font-family: "Ubuntu-Regular", "Ubuntu" } 
+	</style>
+	<use id="Слой 4" href="#img1" x="19" y="3"/>
+	<use id="Слой 5" href="#img2" x="38" y="69"/>
+	<path id="Слой 6" class="s0" d="m49.5 61c-14.7 0-26.5-11.8-26.5-26.5 0-14.7 11.8-26.5 26.5-26.5 14.7 0 26.5 11.8 26.5 26.5 0 14.7-11.8 26.5-26.5 26.5z"/>
+	<path id="Слой 7" class="s0" d="m50 90c-5 0-9-4-9-9 0-5 4-9 9-9 5 0 9 4 9 9 0 5-4 9-9 9z"/>
+	<text id="г" style="transform: matrix(1,0,0,1,39,7)" >
+		<tspan x="0" y="38" class="t1">г
+</tspan>
+	</text>
+</svg>

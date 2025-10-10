@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Военно-историческое наследие Республики Башкортостан</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Стили сайта -->
+    <link rel="stylesheet" href="../static/css/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/objectsinfo.css">
+    <script src="../static/js/leaflet.js"></script>
+    <link rel="icon" type="image/png" href="../static/images/logo1.ico" />
+</head>
+
+<body onload="bustinfo_click('')">
+
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="i-icon" id="btn"></i>
+            <i class="i-icon-cancel" id="cancel"></i>
+        </label>
+
+        <div class="sidebar">
+            <div class="sidebar1">
+                <div class="logo">
+                    <img src="../static/images/logo1.png" width="220" height="130">
+                </div>
+                <ul>
+                    <li><a href="/"><img src="../static/images/icons/map.png" width="40" height="40"><i
+                                class="vhodzvonok">Информационная карта</i></a></li>
+                    <li><a href="/admin/"><img src="../static/images/icons/admin.png" width="40" height="40"><i
+                                class="ishzvonok">Администрирование</i></a></li>
+                </ul>
+            </div>
+            <div class="sidebar2"></div>
+        </div>
+        <div class="leftheader">
+            <div class="calls">
+                <div class="misscall">
+                    <p>ГИС "Терра Башкирия"</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <div class="main">
+            <div class="name">
+                <h1>Атрибутивная информация по всем объектам</h1>
+            </div>
+            <div class="butmain">
+                <button class="infoButton" onclick='bustinfo_click("Горы")'>Горы</button>
+                <button class="infoButton" onclick='bustinfo_click("Водопады")'>Водопады</button>
+                <button class="infoButton" onclick='bustinfo_click("Скалы")'>Скалы</button>
+                <button class="infoButton" onclick='bustinfo_click("Пещеры")'>Пещеры</button>
+                <button class="infoButton" onclick='bustinfo_click("Мавзолеи")'>Мавзолеи</button>
+                <button class="infoButton" onclick='bustinfo_click("Озёра")'>Озёра</button>
+                <button class="infoButton" onclick='bustinfo_click("Водохранилища")'>Водохранилища</button>
+                <br>
+            </div>
+            <div class="hoomain">
+                <br>
+                <table id="tabloo">
+                    <tr>
+                        <th>Название</th>
+                        <th>Тип объекта</th>
+                        <th>Краткое описание</th>
+                        <th>Описание</th>
+                        <th>Район</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    
+    <script>
+        // Конфигурация данных
+        const DATA_CONFIG = {
+            "Горы": { index: 0, api: '/api/mountains/' },
+            "Водопады": { index: 1, api: '/api/waterfalls/' },
+            "Скалы": { index: 2, api: '/api/rocks/' },
+            "Пещеры": { index: 3, api: '/api/caves/' },
+            "Мавзолеи": { index: 4, api: '/api/mausoleums/' },
+            "Озёра": { index: 5, api: '/api/lakes/' },
+            "Водохранилища": { index: 6, api: '/api/reservoirs/' }
+        };
+
+        // Глобальные переменные
+        let loadedData = null;
+        const table = document.getElementById("tabloo");
+
+        // Функция загрузки данных
+        async function load_objects(path) {
+            const response = await fetch(path);
+            return await response.json();
+        }
+
+        // Основная функция загрузки всех данных
+        async function render_markers() {
+            const endpoints = Object.values(DATA_CONFIG).map(config => config.api);
+            const dataPromises = endpoints.map(endpoint => load_objects(endpoint));
+            return await Promise.all(dataPromises);
+        }
+
+        // Функция отображения данных в таблице
+        function displayTableData(data, type) {
+            const config = DATA_CONFIG[type];
+            if (!config || !data) return;
+
+            const dataset = data[config.index];
+            let rowcontent = '';
+
+            for (let i = 0; i < dataset.features.length; i++) {
+                const props = dataset.features[i].properties;
+                rowcontent += `<tr>
+                    <td>${props.name}</td>
+                    <td>${props.type}</td>
+                    <td>${props.short_description}</td>
+                    <td>${props.description}</td>
+                    <td>${props.district}</td>
+                </tr>`;
+            }
+
+            table.innerHTML = `<tr>
+                <th>Название</th>
+                <th>Тип объекта</th>
+                <th>Краткое описание</th>
+                <th>Описание</th>
+                <th>Район</th>
+            </tr>${rowcontent}`;
+        }
+
+        // Основная функция обработки кликов
+        async function bustinfo_click(type) {
+            if (!loadedData) {
+                loadedData = await render_markers();
+            }
+            
+            // Определяем тип для отображения (по умолчанию первый)
+            const displayType = type || "Горы";
+            displayTableData(loadedData, displayType);
+        }
+    </script>
+</body>
+</html>

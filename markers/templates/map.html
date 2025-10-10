@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Информационно-справочная карта</title>
+    <!-----------------------Leaflet----------------------->
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet.css">
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="../static/JS/Leaflet/leaflet.js"></script>
+         <!-----------------------БОКОВАЯ ПАНЕЛЬ----------------------->
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet-sidebar.css">
+    <script src="../static/JS/Leaflet/leaflet-sidebar.js"></script>
+    <!-----------------------СТИЛИ----------------------->
+    <link rel="stylesheet" href="../static/CSS/mapstyle.css">
+    <link rel="stylesheet" href="../static/CSS/mainpage.css">
+    <!-----------------------СЛАЙДЕР ДЛЯ ФОТОГРАФИЙ И ВИДЕО В ОБЪЕКТАХ----------------------->
+    <script src="../static/JS/PhotoSlider.js"></script>
+    <link rel="stylesheet" href="../static/CSS/PhotoSlider.css">
+    <!-----------------------СЛОИ РЕСПУБЛИКИ БАШКОРТОСТАН----------------------->
+    <script src="../static/JS/AdministrativeBoundaries.js"></script>
+    <script src="../static/JS/UfaBoundaries.js"></script>
+    <!-----------------------LEAFLET ROUTING MACHINE----------------------->
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="../static/JS/Leaflet/leaflet-routing-machine-geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <!-----------------------ФИЛЬТР СЛОЕВ----------------------->
+    <script src="../static/JS/Leaflet/leaflet-layers-tree.js"></script>
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet-layers-tree.css">
+    <!-----------------------ИКОНКА ДЛЯ ВКЛАДКИ----------------------->
+    <link rel="icon" type="image/png" href="../static/images/logo1.ico" />
+    <!-----------------------ЭКСТЕНТ КАРТЫ----------------------->
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet-default-extent.css">
+    <script src="../static/JS/Leaflet/leaflet-default-extent.js"></script>
+    <!-----------------------ПОИСК----------------------->
+    <script src="../static/JS/Leaflet/leaflet-search.js"></script>
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet-search.css" />
+    <!-----------------------ВСПЛЫВАЮЩЕЕ ОКНО----------------------->
+    <script src="../static/JS/Leaflet/leaflet-dialog.js"></script>
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet-dialog.css">
+    <!-----------------------ЛЕГЕНДА----------------------->
+    <link rel="stylesheet" href="../static/CSS/Leaflet/leaflet-legend.css">
+    <script src="../static/JS/Leaflet/leaflet-legend.js"></script>
+    <!-----------------------ЗАГРУЗОЧНЫЙ ЭКРАН----------------------->
+    <link rel="stylesheet" href="../static/CSS/preloader.css">
+    <!-----------------------КНОПКИ----------------------->
+    <script src="../static/JS/Leaflet/leaflet-easy-button.js"></script>
+    <!-----------------------ШРИФТ----------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+   
+
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="i-icon" id="btn"></i>
+            <i class="i-icon-cancel" id="cancel"></i>
+        </label>
+
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../static/images/logo1.png" width="220" height="130">
+            </div>
+            <ul>
+                <li><a href="/"><img src="../static/images/icons/map.png" width="40" height="40"><i
+                            class="vhodzvonok">Информационная карта</i></a></li>
+                <li><a href="/admin/"><img src="../static/images/icons/admin.png" width="40" height="40"><i
+                            class="ishzvonok">Администрирование</i></a></li>
+            </ul>
+            <div class="sidebar1">
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+        <div class="leftheader">
+            <div class="calls">
+                <div class="misscall">
+                    <p>ГИС "Терра Башкирия"</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div id="map">
+            <span class="leaflet-layerstree-closed leaflet-layerstree-hide"><img
+                    src="../static/images/logo1.png"></span>
+        </div>
+
+        <script src="../static/JS/main.js"></script>
+    </div>
+    <div id="sidebar"> </div>
+    <div class="preloader">
+        <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor"
+                d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+            </path>
+        </svg>
+    </div>
+
+    <script>
+        document.getElementsByClassName('leaflet-control-attribution')[0].style.display = 'none';
+
+        //-----------------ЗАГРУЗОЧНЫЙ_ЭКРАН-------------------//
+        //-----------------ЗАГРУЗОЧНЫЙ_ЭКРАН-------------------//
+        //-----------------ЗАГРУЗОЧНЫЙ_ЭКРАН-------------------//
+        //-----------------ЗАГРУЗОЧНЫЙ_ЭКРАН-------------------//
+        window.onload = function () {
+            document.body.classList.add('loaded_hiding');
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded_hiding');
+            }, 500);
+        }
+
+        function makeFullScreen() {
+            var divObj = document.getElementsByClassName("Image");
+            divObj[slideIndex - 1].requestFullscreen();
+
+        }
+
+        var sidebar = L.control.sidebar('sidebar', {
+            position: 'left'
+        });
+        map.addControl(sidebar);
+        var home = document.getElementsByClassName('leaflet-control-defaultextent-toggle');
+        getDataAddMarkers = function ({ label, value, map, exclamation }) {
+            map.eachLayer(function (layer) {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+        };
+        
+        //-----------------ИЗМЕНЕНИЕ_ИКОНОК_ПРИ_НАЖАТИИ-------------------//
+        //-----------------ИЗМЕНЕНИЕ_ИКОНОК_ПРИ_НАЖАТИИ-------------------//
+        //-----------------ИЗМЕНЕНИЕ_ИКОНОК_ПРИ_НАЖАТИИ-------------------//
+        //-----------------ИЗМЕНЕНИЕ_ИКОНОК_ПРИ_НАЖАТИИ-------------------//
+        function ChangeIcons() {
+
+            var testElements = document.getElementsByClassName('leaflet-marker-icon');
+            for (var j = 0; j < testElements.length; j++) {
+                if (testElements[j].src != undefined) {
+                    if (testElements[j].src.match("../static/images/icons/MountClick.svg"))
+                        testElements[j].src = "../static/images/icons/Mount.svg";
+                    if (testElements[j].src.match("../static/images/icons/VodopadClick.svg"))
+                        testElements[j].src = "../static/images/icons/Vodopad.svg";
+                    if (testElements[j].src.match("../static/images/icons/SkalaClick.svg"))
+                        testElements[j].src = "../static/images/icons/Skala.svg";
+                    if (testElements[j].src.match("../static/images/icons/PesheraClick.svg"))
+                        testElements[j].src = "../static/images/icons/Peshera.svg";
+                    if (testElements[j].src.match("../static/images/icons/MavzClick.svg"))
+                        testElements[j].src = "../static/images/icons/Mavz.svg";
+                    if (testElements[j].src.match("../static/images/icons/OzeraClick.svg"))
+                        testElements[j].src = "../static/images/icons/Ozera.svg";
+                    if (testElements[j].src.match("../static/images/icons/VhClick.svg"))
+                        testElements[j].src = "../static/images/icons/Vh.svg";
+                }
+            }
+        };
+
+        map.on('click', function () {
+            sidebar.hide();
+            ChangeIcons();
+        });
+
+    </script>
+</body>
+
+</html>

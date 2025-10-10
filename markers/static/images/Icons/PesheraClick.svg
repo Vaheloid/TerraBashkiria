@@ -1,0 +1,21 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+	<title>Novy_proekt</title>
+	<defs>
+		<image  width="61" height="62" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA+AQMAAACiOIEEAAAAAXNSR0IB2cksfwAAAAZQTFRF////AAAAVcLTfgAAAAJ0Uk5TAP9bkSK1AAAAoElEQVR4nM2SsRHCQBADJZsZyKAD6AQ6w+4MOoEOIMMzhkd3ZvSBXQCONrjb90tP/D4C7ViahO0DfRdw7vDcCfgB3ivB+pWjjBFoiNjfBNcTcbwI7gfGErRGlPAOG8Z27LMdA0rD1EjE1EhUIX0yVkix1BXyBJ2xAGW6zfBnsPSrhvkF5yE4H0dncKrO2cnXLtyO+3KD7tQtu/f6Eqa38QXW93FPFdLhcwAAAABJRU5ErkJggg=="/>
+		<image  width="23" height="23" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXAQMAAADa5EbjAAAAAXNSR0IB2cksfwAAAAZQTFRF////AAAAVcLTfgAAAAJ0Uk5TAP9bkSK1AAAAMklEQVR4nGNkYGBgZPzXyMj+4yEj/4ePjPIPfjLaH/gLxvUN/4nCMPUgvSAzQGYBzQQAQYEqhELP4S0AAAAASUVORK5CYII="/>
+		<image  width="54" height="54" id="img3" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2AQMAAAC2i/ieAAAAAXNSR0IB2cksfwAAAAZQTFRF2l9fPu+640i8QwAAAAJ0Uk5TAP9bkSK1AAAAkUlEQVR4nJ2R0Q3CQAxDbahU/soGdBO6GXQz2ITboPyBRLnGqnxIrfiA+3nSKXYSh5gfgWZIrXg6j1WQb/0S9QO4dsThBtz3xPECPHeMMmCsiBzqvKHKQ8DtS+wLJQ8DNoOYCmUXhoWyDeMV1SYa/cyM/3Tmt3mWcy/38r7e37mYzqvk5zxlkNpP3s7f95jvMwFrB2ILiZvimQAAAABJRU5ErkJggg=="/>
+		<image  width="19" height="19" id="img4" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATAQMAAABInqSPAAAAAXNSR0IB2cksfwAAAAZQTFRF2l9fPu+640i8QwAAAAJ0Uk5TAP9bkSK1AAAAK0lEQVR4nGNkYGBgZP7Jwsj/gZFR/kEjo/2Bg2Bc3/AQL4apA+kB6QWaAQARvh0UW6hETAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 49px;fill: #000000;font-weight: 400;font-family: "Ubuntu-Regular", "Ubuntu" } 
+	</style>
+	<use id="Слой 4" href="#img1" x="19" y="3"/>
+	<use id="Слой 5" href="#img2" x="38" y="69"/>
+	<use id="Слой 6" href="#img3" x="22" y="7"/>
+	<use id="Слой 7" href="#img4" x="40" y="71"/>
+	<text id="П" style="transform: matrix(1,0,0,1,32,11)" >
+		<tspan x="0" y="38" class="t0">П
+</tspan>
+	</text>
+</svg>

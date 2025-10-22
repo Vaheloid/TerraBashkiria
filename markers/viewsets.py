@@ -35,27 +35,27 @@ class WaterfallsViewSet(TurobjectViewSet):
     queryset = Waterfalls.objects.all()
     serializer_class = WaterfallsSerializer
 
-class RocksViewSet(viewsets.ReadOnlyModelViewSet):
+class RocksViewSet(TurobjectViewSet):
     """Rocks view set."""
     queryset = Rocks.objects.all()
     serializer_class = RocksSerializer
 
-class CavesViewSet(viewsets.ReadOnlyModelViewSet):
+class CavesViewSet(TurobjectViewSet):
     """Caves view set."""
     queryset = Caves.objects.all()
     serializer_class = CavesSerializer
 
-class MausoleumsViewSet(viewsets.ReadOnlyModelViewSet):
+class MausoleumsViewSet(TurobjectViewSet):
     """Mausoleums view set."""
     queryset = Mausoleums.objects.all()
     serializer_class = MausoleumsSerializer
 
-class LakesViewSet(viewsets.ReadOnlyModelViewSet):
+class LakesViewSet(TurobjectViewSet):
     """Lakes view set."""
     queryset = Lakes.objects.all()
     serializer_class = LakesSerializer
 
-class ReservoirsViewSet(viewsets.ReadOnlyModelViewSet):
+class ReservoirsViewSet(TurobjectViewSet):
     """Reservoirs view set."""
     queryset = Reservoirs.objects.all()
     serializer_class = ReservoirsSerializer
